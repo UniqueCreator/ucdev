@@ -1,0 +1,46 @@
+InputLayout static_geometry = 
+{
+	InputLayoutElement = 
+	{
+		.SemanticName = "position",
+		.SemanticIndex = 0,
+		.Format = R16G16B16A16_FLOAT,
+		.InputSlot = 0,
+		.AlignedByteOffset = 0,
+		.Classification = PER_VERTEX_DATA
+	},
+
+	InputLayoutElement = 
+	{
+		.SemanticName = "texcoord",
+		.SemanticIndex = 0,
+		.Format = R16G16_FLOAT,
+		.InputSlot = 1,
+		.AlignedByteOffset = 0,
+		.Classification = PER_VERTEX_DATA
+	},
+
+	InputLayoutElement = 
+	{
+		.SemanticName = "normal",
+		.SemanticIndex = 0,
+		.Format = R16G16_FLOAT,
+		.InputSlot = 2,
+		.AlignedByteOffset = 0,
+		.Classification = PER_VERTEX_DATA
+	}
+}
+
+InputLayout skinned_geometry : static_geometry = 
+{
+	InputLayoutElement = 
+	{
+		.SemanticName = "bones",
+		.SemanticIndex = 0,
+		.Format = R16G16_FLOAT,
+		.InputSlot = 3,
+		.AlignedByteOffset = 0,
+		.Classification = PER_VERTEX_DATA
+	}	
+}
+

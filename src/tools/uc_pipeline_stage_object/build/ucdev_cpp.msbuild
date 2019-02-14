@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="..\src\uc_pso_generator.cpp" />
+    <ClCompile Include="..\src\uc_pso_identifier.cpp" />
+    <ClCompile Include="..\src\uc_pso_main.cpp" />
+    <ClCompile Include="..\src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_pso_parser.cpp" />
+    <ClCompile Include="..\src\uc_pso_parser_utils.cpp" />
+  </ItemGroup>
+
+</Project>

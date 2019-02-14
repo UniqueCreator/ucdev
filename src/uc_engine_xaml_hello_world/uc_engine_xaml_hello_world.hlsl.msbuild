@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+
+    <PropertyPageSchema Include="msbuild/ucdev_render_shaders.xml" />
+
+    <Shader Include="shaders\full_screen_vertex.hlsl">
+      <ShaderPipelineStage>Vertex</ShaderPipelineStage>
+      <InProject>true</InProject>
+      <Backend>UniqueCreatorPublic</Backend>
+    </Shader>
+
+    <Shader Include="shaders\full_screen_color_pixel.hlsl">
+      <ShaderPipelineStage>Pixel</ShaderPipelineStage>
+      <InProject>true</InProject>
+      <Backend>UniqueCreatorPublic</Backend>
+    </Shader>
+
+    <Shader Include="shaders\default_graphics_signature.hlsl">
+      <ShaderPipelineStage>RootSignature</ShaderPipelineStage>
+      <InProject>true</InProject>
+      <Backend>UniqueCreatorPublic</Backend>
+    </Shader>
+
+    <Shader Include="shaders\triangle_vertex.hlsl">
+      <ShaderPipelineStage>Vertex</ShaderPipelineStage>
+      <InProject>true</InProject>
+      <Backend>UniqueCreatorPublic</Backend>
+    </Shader>
+
+    <Shader Include="shaders\triangle_pixel.hlsl">
+      <ShaderPipelineStage>Pixel</ShaderPipelineStage>
+      <InProject>true</InProject>
+      <Backend>UniqueCreatorPublic</Backend>
+    </Shader>
+
+
+
+  </ItemGroup>
+
+</Project>

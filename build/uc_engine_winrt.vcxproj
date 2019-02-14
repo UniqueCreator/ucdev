@@ -1,0 +1,118 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="uc_engine.vcxproj">
+      <Project>{47005cc8-bd5c-4719-9176-fafb4feff137}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{17005CC8-BD5C-4719-9176-FAFB4FEFF137}</ProjectGuid>
+    <Keyword>uc_engine_winrt</Keyword>
+    <RootNamespace>UniqueCreatorEngine</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <TargetRuntime>Native</TargetRuntime>
+    <AppContainerApplication>true</AppContainerApplication>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(SolutionDir)..\tmp\$(Platform)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_x64_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <IntDir>$(SolutionDir)..\tmp\$(Platform)\$(ProjectName)\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>$(SolutionDir)..\bin\$(Platform)\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)_x64_r</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>autogen/$(Platform)/$(ProjectName)/;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level4</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;WINAPI_PARTITION_APP;UWP;_PC;_X64;UC_ENGINE_API_IMPORT;_DEBUG;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../include;../src/streamflow/private/;$(IntermediateOutputPath)/autogen/shaders;../3rdparty/assimp/include;../3rdparty/gsl/include;../3rdparty/lzham/include;../3rdparty/imgui;../3rdparty/librocket/include;../3rdparty/winrt/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4702</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ImportLibrary>$(SolutionDir)..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(Platform)\$(Configuration);$(SolutionDir)..\3rdparty\assimp\lib\x64\;$(SolutionDir)..\3rdparty\librocket\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ucdev_system_x64_d.lib;WindowsApp.lib;uc_engine_x64_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <WarningLevel>Level4</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;WINAPI_PARTITION_APP;UWP;_PC;_X64;UC_ENGINE_API_IMPORT;_WINDOWS;_USRDLL;%(PreprocessorDefinitions);_SCL_SECURE_NO_WARNINGS</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <EnablePREfast>false</EnablePREfast>
+      <AdditionalIncludeDirectories>../include;../src/streamflow/private/;$(IntermediateOutputPath)/autogen/shaders;../3rdparty/assimp/include;../3rdparty/gsl/include;../3rdparty/lzham/include;../3rdparty/imgui;../3rdparty/librocket/include;../3rdparty/winrt/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>true</TreatWarningAsError>
+      <DisableSpecificWarnings>4702</DisableSpecificWarnings>
+      <LanguageStandard>stdcpplatest</LanguageStandard>
+      <CompileAsWinRT>true</CompileAsWinRT>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)..\lib\$(Platform)\$(Configuration)\$(TargetName).lib</ImportLibrary>
+      <AdditionalLibraryDirectories>$(SolutionDir)..\lib\$(Platform)\$(Configuration);$(SolutionDir)..\3rdparty\assimp\lib\x64\;$(SolutionDir)..\3rdparty\librocket\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>ucdev_system_x64_r.lib;WindowsApp.lib;uc_engine_x64_r.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="uc_engine_winrt_h.msbuild" />
+  <Import Project="uc_engine_winrt_cpp.msbuild" />
+</Project>

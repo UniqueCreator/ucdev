@@ -1,0 +1,11 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <GslDirectory>$(MSBuildThisFileDirectory)..\3rdparty\gsl\include</GslDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);GSL</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(GslDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+</Project>

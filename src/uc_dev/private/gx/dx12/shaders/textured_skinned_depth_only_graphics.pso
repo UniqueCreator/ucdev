@@ -1,0 +1,49 @@
+import depthstencil
+import rasterizer
+import blend
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+	InputLayoutElement = 
+    {
+        .SemanticName = "blend_weights"
+        .SemanticIndex = 0
+        .Format = R32G32B32A32_FLOAT
+        .InputSlot = 1
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+	InputLayoutElement = 
+    {
+        .SemanticName	= "blend_indices"
+        .SemanticIndex	= 0
+        .Format			= R8G8B8A8_UINT
+        .InputSlot		= 2
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject textured_skinned_depth_only_graphics : depth_only_geometry =
+{
+    .VertexShader           = depth_only_skinned_vertex
+    .InputLayout            = position
+}
+
+
+
+
+
+

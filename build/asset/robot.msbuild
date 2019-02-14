@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <!--robot-textures Include="..\data\meshes_animated\robot\low_poly\gun_lowpoly_color.png">
+      <format>bc1_unorm_srgb</format>
+    </robot-textures-->
+    <robot-textures Include="..\data\meshes_animated\robot\low_poly\robot_lowpoly_color.png">
+      <format>bc1_unorm_srgb</format>
+    </robot-textures>
+    <Model Include="..\data\meshes_animated\robot\low_poly\robot.fbx">
+      <ModelType>derivatives_skinned_model</ModelType>
+      <Name>robot</Name>
+
+      <OptionFlipUVs>true</OptionFlipUVs>
+      <OptionTriangulate>true</OptionTriangulate>
+    </Model>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Skeleton Include="..\data\meshes_animated\robot\low_poly\robot.fbx">
+    </Skeleton>
+  </ItemGroup>
+
+  <ItemGroup>
+    
+    <Animation Include="..\data\meshes_animated\robot\low_poly\lifting.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\breathing_idle.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\climbing.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\closing.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\closing_a_lid.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\crouch_death.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\drawing_gun.fbx">
+    </Animation>
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\gunplay.fbx">
+    </Animation>    
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\hanging_idle.fbx">
+    </Animation>        
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\hit_reaction.fbx">
+    </Animation>            
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\inspecting.fbx">
+    </Animation>                
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\jumping.fbx">
+    </Animation>                    
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\jump_away.fbx">
+    </Animation>                        
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\picking_up_object.fbx">
+    </Animation>                                
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\rifle_jump.fbx">
+    </Animation>                                    
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\rifle_run.fbx">
+    </Animation>                                    
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\running.fbx">
+    </Animation>                                        
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\running_jump.fbx">
+    </Animation>                                            
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\shooting.fbx">
+    </Animation>                                                
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\smash.fbx">
+    </Animation>                                                    
+
+    <Animation Include="..\data\meshes_animated\robot\low_poly\swagger_walk.fbx">
+    </Animation>                                                        
+
+  </ItemGroup>
+
+</Project>

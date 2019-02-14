@@ -1,0 +1,107 @@
+DepthStencilDescription user_interface =
+{
+    .DepthEnable            = false
+    .DepthWriteMask         = All
+    .DepthFunction          = Less
+    .StencilEnable          = false
+
+    .StencilReadMask        = 255
+    .StencilWriteMask       = 255
+
+    .FrontFace = 
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+
+    .BackFace =
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+}
+
+DepthStencilDescription opaque =
+{
+    .DepthEnable            = true
+    .DepthWriteMask         = Zero
+    .DepthFunction          = LessEqual
+    .StencilEnable          = false
+
+    .StencilReadMask        = 255
+    .StencilWriteMask       = 255
+
+    .FrontFace = 
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+
+    .BackFace =
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+}
+
+DepthStencilDescription depth_only =
+{
+    .DepthEnable            = true
+    .DepthWriteMask         = All
+    .DepthFunction          = Less
+    .StencilEnable          = false
+
+    .StencilReadMask        = 255
+    .StencilWriteMask       = 255
+
+    .FrontFace = 
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+
+    .BackFace =
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+}
+
+DepthStencilDescription depth_only_inverted =
+{
+    .DepthEnable            = true
+    .DepthWriteMask         = All
+    .DepthFunction          = Greater
+    .StencilEnable          = false
+
+    .StencilReadMask        = 255
+    .StencilWriteMask       = 255
+
+    .FrontFace = 
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+
+    .BackFace =
+    {
+        .StencilFailOp      = Zero
+        .StencilDepthFailOp = Zero
+        .StencilPassOp      = Zero
+        .StencilFunction    = Less
+    }
+}

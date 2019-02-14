@@ -1,0 +1,33 @@
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+    InputLayoutElement = 
+    {
+        .SemanticName = "texcoord"
+        .SemanticIndex = 0
+        .Format = R32G32_FLOAT
+        .InputSlot = 1
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject textured_solid_graphics : solid_geometry =
+{
+    .VertexShader           = textured_vertex
+    .PixelShader            = textured_pixel
+    .InputLayout            = position
+}
+
+
+

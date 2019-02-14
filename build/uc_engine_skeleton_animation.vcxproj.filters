@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+</ItemGroup>
+<ItemGroup>	
+<ClInclude Include = "..\src\uc_engine_skeleton_animation\pch.h"><Filter>src\uc_engine_skeleton_animation</Filter></ClInclude>	
+<ClInclude Include = "..\src\uc_engine_skeleton_animation\targetver.h"><Filter>src\uc_engine_skeleton_animation</Filter></ClInclude>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "include"/>
+<Filter Include = "include\uc_public"/>
+<Filter Include = "include\uc_public\animations"/>
+<Filter Include = "include\uc_public\assets"/>
+<Filter Include = "include\uc_public\assets\animations"/>
+<Filter Include = "include\uc_public\assets\graphics"/>
+<Filter Include = "include\uc_public\gpu"/>
+<Filter Include = "include\uc_public\graphics"/>
+<Filter Include = "include\uc_public\graphics\geometry"/>
+<Filter Include = "include\uc_public\imaging"/>
+<Filter Include = "include\uc_public\io"/>
+<Filter Include = "include\uc_public\io\uwp"/>
+<Filter Include = "include\uc_public\math"/>
+<Filter Include = "include\uc_public\render"/>
+<Filter Include = "include\uc_public\system"/>
+</ItemGroup>
+<ItemGroup>	
+<ClInclude Include = "..\include\uc_public\animations\animations.h"><Filter>include\uc_public\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\animations\joint_animation_instance.h"><Filter>include\uc_public\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\animations\joint_animation_instance_factory.h"><Filter>include\uc_public\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\animations\skeleton_instance.h"><Filter>include\uc_public\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\animations\skeleton_instance_factory.h"><Filter>include\uc_public\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\animations.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\joint_animation.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\joint_animations.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\joint_animations_factory.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\skeleton.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\animations\skeleton_factory.h"><Filter>include\uc_public\assets\animations</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\assets.h"><Filter>include\uc_public\assets</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\graphics.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\skinned_model.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\skinned_model_factory.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\texture_2d.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\texture_2d_factory.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\assets\graphics\texture_2d_mip_chain.h"><Filter>include\uc_public\assets\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\gpu\default_graphics_signature.h"><Filter>include\uc_public\gpu</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\back_buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\background_swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\color_buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\composition_swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\compute_command_context.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\compute_pipeline_state.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\compute_queue.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\copy_command_context.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\copy_queue.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\depth_buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\depth_stencil_buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\descriptor_handle.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\device_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\direct_command_context.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\direct_queue.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\fence_handle.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\geometry_factory.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\indexed_geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\indexed_geometry_allocation.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\indexed_geometry_factory.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\parametrized_indexed_geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\position_indexed_geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\ranged_parametrized_geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\skinned_geometry_allocation.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\skinned_geometry_factory.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\geometry\skinned_ranged_geometry.h"><Filter>include\uc_public\graphics\geometry</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\gpu_command_context.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\gpu_virtual_resource.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\graphics.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\graphics_pipeline_state.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\graphics_types.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\overlay_swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\pixel_buffer.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\render_target_view.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\resource_create_context.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\root_signature.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\shader_resource_view.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\texture_2d.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\unordered_access_view.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\upload_queue.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\window_overlay_swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\graphics\window_swap_chain_resources.h"><Filter>include\uc_public\graphics</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\imaging\image_2d.h"><Filter>include\uc_public\imaging</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\imaging\image_factory.h"><Filter>include\uc_public\imaging</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\imaging\image_types.h"><Filter>include\uc_public\imaging</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\imaging\imaging.h"><Filter>include\uc_public\imaging</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\create_game_pad_params.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\create_keyboard_params.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\create_mouse_params.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\game_pad.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\io.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\keyboard.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\mouse.h"><Filter>include\uc_public\io</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\uwp\uwp_create_game_pad_params.h"><Filter>include\uc_public\io\uwp</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\uwp\uwp_create_keyboard_params.h"><Filter>include\uc_public\io\uwp</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\io\uwp\uwp_create_mouse_params.h"><Filter>include\uc_public\io\uwp</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\defines.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\graphics.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\math.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\matrix4x4.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\memory.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\quaternion.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\math\vector4.h"><Filter>include\uc_public\math</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\perspective_transform_3d.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\pinhole_camera.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\primitive_range.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\skinned_render_object.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\skinned_render_object_factory.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\render\view_transform_3d.h"><Filter>include\uc_public\render</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\system\system.h"><Filter>include\uc_public\system</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\system\timer.h"><Filter>include\uc_public\system</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\system\timer_factory.h"><Filter>include\uc_public\system</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_base.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_implementation.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_intrusive_ptr.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_non_copyable.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_pimpl.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_pimpl_impl.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_propagate_const.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_public.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_referenced_object.h"><Filter>include\uc_public</Filter></ClInclude>	
+<ClInclude Include = "..\include\uc_public\uc_render_defines.h"><Filter>include\uc_public</Filter></ClInclude>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+</ItemGroup>
+<ItemGroup>	
+<ClCompile Include = "..\src\uc_engine_skeleton_animation\pch.cpp"><Filter>src\uc_engine_skeleton_animation</Filter></ClCompile>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+</ItemGroup>
+<ItemGroup>	
+<ClCompile Include = "..\src\uc_engine_skeleton_animation\main.cpp"><Filter>src\uc_engine_skeleton_animation</Filter></ClCompile>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+<Filter Include = "src\uc_engine_skeleton_animation\shaders"/>
+</ItemGroup>
+<ItemGroup>	
+<Shader Include = "..\src\uc_engine_skeleton_animation\shaders\textured_skinned_vertex.hlsl"><Filter>src\uc_engine_skeleton_animation\shaders</Filter></Shader>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+<Filter Include = "src\uc_engine_skeleton_animation\shaders"/>
+</ItemGroup>
+<ItemGroup>	
+<Shader Include = "..\src\uc_engine_skeleton_animation\shaders\textured_pixel.hlsl"><Filter>src\uc_engine_skeleton_animation\shaders</Filter></Shader>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "include"/>
+<Filter Include = "include\uc_public"/>
+<Filter Include = "include\uc_public\gpu"/>
+</ItemGroup>
+<ItemGroup>	
+<Shader Include = "..\include\uc_public\gpu\default_graphics_signature.hlsl"><Filter>include\uc_public\gpu</Filter></Shader>
+</ItemGroup>
+<ItemGroup>
+<Filter Include = "src"/>
+<Filter Include = "src\uc_engine_skeleton_animation"/>
+<Filter Include = "src\uc_engine_skeleton_animation\shaders"/>
+</ItemGroup>
+<ItemGroup>	
+<GraphicsPipelineStateObject Include = "..\src\uc_engine_skeleton_animation\shaders\textured_skinned_graphics.pso"><Filter>src\uc_engine_skeleton_animation\shaders</Filter></GraphicsPipelineStateObject>
+</ItemGroup></Project> 

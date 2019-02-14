@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <military_mechanic_multi_textured-textures Include="..\data\military_mechanic\meshes_animated\cloth.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic_multi_textured-textures>
+    <military_mechanic_multi_textured-textures Include="..\data\military_mechanic\meshes_animated\body.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic_multi_textured-textures>
+    <military_mechanic_multi_textured-textures Include="..\data\military_mechanic\meshes_animated\face.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic_multi_textured-textures>
+    <military_mechanic_multi_textured-textures Include="..\data\military_mechanic\meshes_animated\eyelashes.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic_multi_textured-textures>
+    <military_mechanic_multi_textured-textures Include="..\data\military_mechanic\meshes_animated\eyes.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic_multi_textured-textures>
+
+    <Model Include="..\data\meshes_animated\military_mechanic\military_mechanic_multi_textured.fbx">
+      <ModelType>multi_textured</ModelType>
+      <Name>military_mechanic_multi_textured</Name>
+      <OptionMakeLeftHanded>true</OptionMakeLeftHanded>
+      <OptionFlipWindingOrder>false</OptionFlipWindingOrder>
+      <OptionFlipUVs>true</OptionFlipUVs>
+      <OptionTriangulate>true</OptionTriangulate>
+    </Model>
+  </ItemGroup>
+
+
+
+
+</Project>

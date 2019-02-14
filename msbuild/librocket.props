@@ -1,0 +1,106 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <LibRocketDirectory>$(MSBuildThisFileDirectory)..\3rdparty\librocket</LibRocketDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);LIBROCKET</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(LibRocketDirectory)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup>
+    <Link>
+      <AdditionalDependencies>rocketcore.lib;rocketcontrols.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibRocketDirectory)\lib\x86\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibRocketDirectory)\lib\x86\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibRocketDirectory)\lib\x64\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(LibRocketDirectory)\lib\x64\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+
+    <None Include="$(LibRocketDirectory)\bin\x64\debug\RocketControls.dll">
+      <Link>RocketControls.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x64\debug\RocketCore.dll">    
+      <Link>RocketCore.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x64\debug\RocketDebugger.dll">        
+      <Link>RocketDebugger.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</DeploymentContent>
+    </None>
+    
+    <None Include="$(LibRocketDirectory)\bin\x64\release\RocketControls.dll">
+      <Link>RocketControls.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x64\release\RocketCore.dll">    
+      <Link>RocketCore.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</DeploymentContent>
+    </None>
+    
+    <None Include="$(LibRocketDirectory)\bin\x64\release\RocketDebugger.dll">        
+      <Link>RocketDebugger.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x86\debug\RocketControls.dll">
+      <Link>RocketControls.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x86\debug\RocketCore.dll">    
+      <Link>RocketCore.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x86\debug\RocketDebugger.dll">        
+      <Link>RocketDebugger.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">true</DeploymentContent>
+    </None>
+    
+    <None Include="$(LibRocketDirectory)\bin\x86\release/RocketControls.dll">
+      <Link>RocketControls.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(LibRocketDirectory)\bin\x86\release\RocketCore.dll">    
+      <Link>RocketCore.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</DeploymentContent>
+    </None>
+    
+    <None Include="$(LibRocketDirectory)\bin\x86\release\RocketDebugger.dll">        
+      <Link>RocketDebugger.dll</Link>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</DeploymentContent>
+    </None>
+
+   </ItemGroup>
+
+</Project>

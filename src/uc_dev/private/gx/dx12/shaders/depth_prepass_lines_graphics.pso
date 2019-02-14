@@ -1,0 +1,26 @@
+import depthstencil
+import rasterizer
+import blend
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject depth_prepass_lines_graphics : depth_only_geometry =
+{
+    .VertexShader           = depth_only_vertex
+    .InputLayout            = position
+}
+
+
+

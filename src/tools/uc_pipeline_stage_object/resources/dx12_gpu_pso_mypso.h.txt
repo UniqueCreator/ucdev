@@ -1,0 +1,66 @@
+#pragma once
+
+#include <wrl/client.h>
+#include <ppltasks.h>
+
+#include <uc_dev/gx/dx12/dx12.h>
+
+
+namespace uc
+{
+    namespace gx
+    {
+        namespace dx12
+        {
+            namespace mypso
+            {
+                struct graphics_pipeline_state : public dx12::graphics_pipeline_state
+                {
+                    using base = dx12::graphics_pipeline_state;
+
+                    Microsoft::WRL::ComPtr<ID3D12PipelineState>  m_state;
+                    Microsoft::WRL::ComPtr<ID3D12RootSignature>  m_root_signature;
+                    root_signature_meta_data                     m_root_signature_meta_data;
+
+                    graphics_pipeline_state
+                    (
+                        const Microsoft::WRL::ComPtr<ID3D12PipelineState>&      state
+                        , const Microsoft::WRL::ComPtr<ID3D12RootSignature>&    root_signature
+                        , const root_signature_meta_data&                       root_signature_meta_data
+                    );
+
+                    graphics_pipeline_state
+                    (
+                        Microsoft::WRL::ComPtr<ID3D12PipelineState>&&           state
+                        , Microsoft::WRL::ComPtr<ID3D12RootSignature>&&         root_signature
+                        , root_signature_meta_data&&                            root_signature_meta_data
+                    );
+
+                    graphics_pipeline_state() = default;
+                    ~graphics_pipeline_state() = default;
+
+                    graphics_pipeline_state(const graphics_pipeline_state&) = default;
+                    graphics_pipeline_state(graphics_pipeline_state&&) = default;
+
+                    graphics_pipeline_state& operator=(const graphics_pipeline_state&) = default;
+                    graphics_pipeline_state& operator=(graphics_pipeline_state&&) = default;
+                };
+
+                graphics_pipeline_state* create_pso(ID3D12Device* d, D3D12_CPU_DESCRIPTOR_HANDLE cbv, D3D12_CPU_DESCRIPTOR_HANDLE srv, D3D12_CPU_DESCRIPTOR_HANDLE uav, D3D12_CPU_DESCRIPTOR_HANDLE sampler);
+
+                inline concurrency::task<graphics_pipeline_state*> create_pso_async(ID3D12Device* d, D3D12_CPU_DESCRIPTOR_HANDLE cbv, D3D12_CPU_DESCRIPTOR_HANDLE srv, D3D12_CPU_DESCRIPTOR_HANDLE uav, D3D12_CPU_DESCRIPTOR_HANDLE sampler )
+                {
+                    //this can take around 2ms - 3 ms, so please use async
+                    return concurrency::create_task([d, cbv, srv, uav, sampler]()
+                    {
+                        return create_pso(d, cbv, srv, uav, sampler);
+                    });
+                }
+            }
+        }
+    }
+}
+
+
+
+

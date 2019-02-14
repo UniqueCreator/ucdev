@@ -1,0 +1,46 @@
+import rasterizer
+import depthstencil
+
+BlendDescription user_interface = 
+{
+    .AlphaToCoverageEnable  = false
+    .IndependentBlendEnable = false
+
+    RenderTargetBlendDesc = 
+    {
+        .BlendEnable        = false
+        .LogicOpEnable      = false
+        .SrcBlend           = One
+        .DestBlend          = One
+        .BlendOp            = Max
+        .SrcBlendAlpha      = One
+        .DestBlendAlpha     = One
+        .BlendOpAlpha       = Min
+        .LogicOp            = Or
+        .RenderTargetWriteMask = All | Green
+    }
+}
+
+PipelineStateObject static_geometry =
+{
+    .BlendState             = user_interface
+    .SampleMask             = FFFFFFFF
+    .RasterizerState        = user_interface
+    .DepthStencilState      = user_interface
+    .StripCutValue          = Disabled
+    .PrimitiveTopology      = Triangle
+    .RTVFormats             = {B8G8R8A8_UNORM }
+    .DSVFormat              = D32_FLOAT
+    .SampleDescription      = { .Count = 1 .Quality = 0 }
+}
+
+PipelineStateObject static_geometry1 : static_geometry =
+{
+    .RootSignature          = default_graphics_signature
+    .VertexShader           = shader
+    .PixelShader            = shader1
+}
+
+
+
+

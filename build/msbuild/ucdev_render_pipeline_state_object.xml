@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright, Microsoft Corporation, All rights reserved.-->
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ContentType
+        Name="PSO"
+        DisplayName="UCDev Pipeline State Object"
+        ItemType="PipelineStateObject">
+    </ContentType>
+
+    <ItemType Name="PipelineStateObject" DisplayName="UCDev Pipeline State Object" />
+    <!--FileExtension Name=".hlsl" ContentType="Asax"/-->
+
+  <Rule Name="PipelineStateObject"
+        PageTemplate="tool"
+        DisplayName="UCDev Pipeline State Object"
+        SwitchPrefix="/"
+        Order="300">
+
+      <StringProperty Name="EntryPointName" DisplayName="EntryPointName">
+        <Argument Property="EntryPointName" IsRequired="true"/>
+      </StringProperty>
+
+
+
+    <Rule.Categories>
+      <Category Name="General" DisplayName="General" />
+    </Rule.Categories>
+
+    <Rule.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="PipelineStateObject"/>
+    </Rule.DataSource>
+
+  
+  </Rule>
+
+</ProjectSchemaDefinitions>

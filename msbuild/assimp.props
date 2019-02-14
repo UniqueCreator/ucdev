@@ -1,0 +1,68 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <AssImpDirectory>$(MSBuildThisFileDirectory)..\3rdparty\assimp</AssImpDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);ASSIMP</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(AssImpDirectory)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+ 
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(AssImpDirectory)\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc140-mt-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(AssImpDirectory)\lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(AssImpDirectory)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc140-mt-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(AssImpDirectory)\lib\x64;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>assimp-vc140-mt.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+<ItemGroup>
+
+    <None Include="$(AssImpDirectory)\bin\x64\assimp-vc140-mt-d.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),assimp-vc140-mt-d.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(AssImpDirectory)\bin\x64\assimp-vc140-mt.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),assimp-vc140-mt.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(AssImpDirectory)\bin\x86\assimp-vc140-mt-d.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),assimp-vc140-mt-d.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(AssImpDirectory)\bin\x86\assimp-vc140-mt.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),assimp-vc140-mt.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</DeploymentContent>
+    </None>
+
+  </ItemGroup>
+
+</Project>

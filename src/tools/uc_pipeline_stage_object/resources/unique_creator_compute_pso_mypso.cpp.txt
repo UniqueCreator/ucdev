@@ -1,0 +1,39 @@
+#include "pch.h"
+
+
+#include "dx12_gpu_pso_mypso.h"
+#include <uc_public/graphics/resource_create_context.h>
+
+mypso_includes
+
+namespace UniqueCreator
+{
+    namespace Graphics
+    {
+        namespace PipelineStates
+        {
+            namespace mypso
+            {
+                namespace
+                {
+                    static auto description()
+                    {
+                        using namespace ComputeShaders;
+
+                        mypso_state
+
+                        return &state;
+                    }
+                }
+
+                std::unique_ptr<ComputePipelineState> Create(ResourceCreateContext* rc)
+                {
+                    auto desc   = description();
+                    auto r		= rc->CreateComputePipelineState(desc).release();
+                    auto r0		= static_cast<ComputePipelineState*>(r);
+                    return std::unique_ptr<ComputePipelineState> (r0);
+                }
+            }
+        }
+    }
+}

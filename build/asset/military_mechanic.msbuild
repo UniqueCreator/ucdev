@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+    <military_mechanic-textures Include="..\data\meshes_animated\military_mechanic\cloth.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic-textures>
+    <military_mechanic-textures Include="..\data\meshes_animated\military_mechanic\body.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic-textures>
+    <military_mechanic-textures Include="..\data\meshes_animated\military_mechanic\face.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic-textures>
+    <military_mechanic-textures Include="..\data\meshes_animated\military_mechanic\eyelashes.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic-textures>
+    <military_mechanic-textures Include="..\data\meshes_animated\military_mechanic\eyes.png">
+      <format>bc1_unorm_srgb</format>
+    </military_mechanic-textures>
+    <Model Include="..\data\meshes_animated\military_mechanic\military_mechanic.fbx">
+      <ModelType>derivatives_skinned_model</ModelType>
+
+      <Name>military_mechanic</Name>
+      <OptionMakeLeftHanded>true</OptionMakeLeftHanded>
+      <OptionFlipWindingOrder>false</OptionFlipWindingOrder>
+      <OptionFlipUVs>true</OptionFlipUVs>
+      <OptionTriangulate>true</OptionTriangulate>
+    </Model>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Skeleton Include="..\data\meshes_animated\military_mechanic\military_mechanic.fbx">
+      <OptionMakeLeftHanded>true</OptionMakeLeftHanded>
+    </Skeleton>
+  </ItemGroup>
+  <ItemGroup>
+    <Animation Include="..\data\meshes_animated\military_mechanic\military_mechanic.fbx">
+    <OptionMakeLeftHanded>true</OptionMakeLeftHanded>
+    </Animation>
+  </ItemGroup>
+
+
+
+
+</Project>

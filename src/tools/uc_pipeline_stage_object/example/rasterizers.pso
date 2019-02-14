@@ -1,0 +1,35 @@
+RasterizerDescription back = 
+{
+	.FillMode = Solid,
+	.CullMode = Back,
+	.FrontCounterClockwise = true,
+	.DepthBias = 0,
+	.DepthBiasClamp = 0.0,
+	.SlopeScaledDepthBias = 0.0,
+	.DepthClipEnable = true,
+	.MultisampleEnable = false,
+	.AntialiasedLineEnable = false,
+	.ForcedSampleCount  = 0,
+	.ConservativeRasterizationMode = Off
+}
+
+RasterizerDescription front : back =  
+{
+	.CullMode = Front
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

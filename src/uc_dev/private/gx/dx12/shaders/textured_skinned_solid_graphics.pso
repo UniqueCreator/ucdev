@@ -1,0 +1,73 @@
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+    InputLayoutElement = 
+    {
+        .SemanticName = "texcoord"
+        .SemanticIndex = 0
+        .Format = R32G32_FLOAT
+        .InputSlot = 1
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+    InputLayoutElement = 
+    {
+        .SemanticName = "normal"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 2
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+    InputLayoutElement = 
+    {
+        .SemanticName = "tangent"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 3
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+    InputLayoutElement = 
+    {
+        .SemanticName = "blend_weights"
+        .SemanticIndex = 0
+        .Format = R32G32B32A32_FLOAT
+        .InputSlot = 4
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+
+    InputLayoutElement = 
+    {
+        .SemanticName   = "blend_indices"
+        .SemanticIndex  = 0
+        .Format         = R8G8B8A8_UINT
+        .InputSlot      = 5
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject textured_skinned_solid_graphics : solid_geometry =
+{
+    .VertexShader           = textured_skinned_vertex
+    .PixelShader            = textured_pixel
+    .InputLayout            = position
+}
+
+
+

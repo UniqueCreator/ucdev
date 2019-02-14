@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+
+<ItemGroup>	
+<Shader Include = "..\src\uc_engine_hello_world\shaders\full_screen_vertex.hlsl"><ShaderPipelineStage>Vertex</ShaderPipelineStage><Backend>UniqueCreatorPublic</Backend></Shader>
+</ItemGroup>
+<ItemGroup>	
+<Shader Include = "..\src\uc_engine_hello_world\shaders\full_screen_color_pixel.hlsl"><ShaderPipelineStage>Pixel</ShaderPipelineStage><Backend>UniqueCreatorPublic</Backend></Shader>
+</ItemGroup>
+<ItemGroup>	
+<Shader Include = "..\include\uc_public\gpu\default_graphics_signature.hlsl"><ShaderPipelineStage>RootSignature</ShaderPipelineStage><Backend>UniqueCreatorPublic</Backend></Shader>
+</ItemGroup></Project> 

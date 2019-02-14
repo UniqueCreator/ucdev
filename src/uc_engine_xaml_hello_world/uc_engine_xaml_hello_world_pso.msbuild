@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <PropertyPageSchema Include="ucdev_render_pipeline_state_object.xml" />
+
+    <GraphicsPipelineStateObject Include="shaders\full_screen_graphics.pso">
+      <EntryPointName>full_screen_graphics</EntryPointName>
+      <InProject>true</InProject>
+    </GraphicsPipelineStateObject>
+
+    <GraphicsPipelineStateObject Include="shaders\triangle_graphics.pso">
+      <EntryPointName>triangle_graphics</EntryPointName>
+      <InProject>true</InProject>
+    </GraphicsPipelineStateObject>
+
+  </ItemGroup>
+</Project>

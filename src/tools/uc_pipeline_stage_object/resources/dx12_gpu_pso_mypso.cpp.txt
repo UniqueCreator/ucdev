@@ -1,0 +1,70 @@
+#include "pch.h"
+
+
+#include "dx12_gpu_pso_mypso.h"
+
+#include <uc_dev/gx/dx12/dx12.h>
+
+mypso_includes
+
+namespace uc
+{
+    namespace gx
+    {
+        namespace dx12
+        {
+            namespace mypso
+            {
+                namespace
+                {
+                    auto description()
+                    {
+                        mypso_state
+
+                        return state;
+                    }
+
+                    graphics_pipeline_state create(ID3D12Device* d, D3D12_CPU_DESCRIPTOR_HANDLE cbv, D3D12_CPU_DESCRIPTOR_HANDLE srv, D3D12_CPU_DESCRIPTOR_HANDLE uav, D3D12_CPU_DESCRIPTOR_HANDLE sampler)
+                    {
+                        auto sig    = create_mypso_signature(d);
+                        auto desc   = description();
+                        auto blob   = mypso_signature_constructor();
+
+                        desc.pRootSignature = sig;
+
+                        root_signature_meta_data meta_data = parse_root_signature(blob.code(), blob.code_size(), cbv, srv, uav, sampler );
+
+                        return graphics_pipeline_state(create_graphics_pipeline_state(d, &desc), std::move(sig), meta_data ) ;
+                    }
+                }
+
+                graphics_pipeline_state::graphics_pipeline_state ( const Microsoft::WRL::ComPtr<ID3D12PipelineState>&  state , const Microsoft::WRL::ComPtr<ID3D12RootSignature>&  root_signature , const root_signature_meta_data& root_signature_meta_data) :
+                m_state(state)
+                , m_root_signature(root_signature)
+                , m_root_signature_meta_data(root_signature_meta_data)
+                {
+                    base::m_state                    = state.Get();
+                    base::m_root_signature           = root_signature.Get();
+                    base::m_root_signature_meta_data = &m_root_signature_meta_data;
+                }
+
+                graphics_pipeline_state::graphics_pipeline_state( Microsoft::WRL::ComPtr<ID3D12PipelineState>&&  state, Microsoft::WRL::ComPtr<ID3D12RootSignature>&&  root_signature, root_signature_meta_data&& root_signature_meta_data) :
+                    m_state( std::move(state))
+                    , m_root_signature( std::move( root_signature) )
+                    , m_root_signature_meta_data( std::move(root_signature_meta_data))
+                {
+                    base::m_state                    = state.Get();
+                    base::m_root_signature           = root_signature.Get();
+                    base::m_root_signature_meta_data = &m_root_signature_meta_data;
+                }
+
+
+                graphics_pipeline_state* create_pso(ID3D12Device* d, D3D12_CPU_DESCRIPTOR_HANDLE cbv, D3D12_CPU_DESCRIPTOR_HANDLE srv, D3D12_CPU_DESCRIPTOR_HANDLE uav, D3D12_CPU_DESCRIPTOR_HANDLE sampler)
+                {
+                    static graphics_pipeline_state s = create(d, cbv, srv, uav, sampler);
+                    return &s;
+                }
+            }
+        }
+    }
+}

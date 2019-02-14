@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="uc_engine_xaml_hello_world.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:uc_engine_xaml_hello_world"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch" Width="1600" Height="900" MinHeight="8" MinWidth="8">
+
+    <Viewbox StretchDirection="Both" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Stretch="UniformToFill">
+        <SwapChainPanel x:Name="m_swapChainPanel" Width="1600" Height="900" MinHeight="8"/>
+    </Viewbox>
+    
+    <!--Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    </-->
+</Page>

@@ -1,0 +1,10 @@
+import texturedskinnedlit
+
+PipelineStateObject textured_skinned_lit_depth_only_graphics : depth_only_geometry =
+{
+    .VertexShader           = depth_only_skinned_vertex
+    .InputLayout            = position_depth_only
+}
+
+
+

@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|Win32">
+      <Configuration>debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|Win32">
+      <Configuration>release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DBC07C8D-6EEE-4D09-8DC8-C40F7E16EA7C}</ProjectGuid>
+    <Keyword>ManagedCProj</Keyword>
+    <RootNamespace>UniqueCreatorBuildTasks</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+    <ProjectName>uc_build_tasks</ProjectName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputBinDirectory Condition="'$(OutputBinDirectory)'==''">$(ProjectDir)..\..\bin</OutputBinDirectory>
+    <OutputLibDirectory Condition="'$(OutputLibDirectory)'==''">$(ProjectDir)..\..\lib</OutputLibDirectory>
+    <OutputTmpDirectory Condition="'$(OutputTempDirectory)'==''">$(ProjectDir)..\..\tmp</OutputTmpDirectory>
+  </PropertyGroup>
+  <!--Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" /-->
+  <Import Project="../../../../msbuild/vs_default.props" />
+  <Import Project="../../../../msbuild/fbxsdk.props" />
+  <!--Import Project="../../../../msbuild/cpp_default.props" /-->
+  <!--Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" /-->
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CLRSupport>true</CLRSupport>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <EmbedManifest>false</EmbedManifest>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;_DEBUG%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)/%(RelDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3dcompiler.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>Debug</GenerateDebugInformation>
+    </Link>
+    <Manifest />
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>WIN32;_CRT_SECURE_NO_WARNINGS;_SCL_SECURE_NO_WARNINGS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <ObjectFileName>$(IntDir)/%(RelDir)</ObjectFileName>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>d3dcompiler.lib</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+    <Manifest />
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Utilities.Core">
+      <!--HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.Utilities.Core.dll</HintPath-->
+    </Reference>
+    <!--Reference Include="Microsoft.Build">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.dll</HintPath>
+    </Reference-->
+    <Reference Include="Microsoft.Build.CPPTasks.Common">
+      <!--HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.Build.CPPTasks.Common.dll</HintPath-->
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Engine">
+      <!--HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.Engine.dll</HintPath-->
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="Microsoft.Build.Framework">
+      <!--HintPath>..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\MSBuild\15.0\Bin\Microsoft.Build.Framework.dll</HintPath-->
+      <Private>true</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\resources\resource.h" />
+    <ClInclude Include="..\src\pch.h" />
+    <ClInclude Include="..\src\uc_build_tasks.h" />
+    <ClInclude Include="..\src\md5.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_animation_tool_task.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_base_tool_task.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_boolean_option.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_custom_tool_task.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_model_tool_task.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_texture_tool_task.h" />
+    <ClInclude Include="..\src\tool_tasks\uc_build_skeleton_tool_task.h" />
+    <ClInclude Include="..\src\uc_build_backends.h" />
+    <ClInclude Include="..\src\uc_build_md5.h" />
+    <ClInclude Include="..\src\uc_build_tasks_build_caches.h" />
+    <ClInclude Include="..\src\uc_build_tasks_dependencies.h" />
+    <ClInclude Include="..\src\uc_build_tasks_dependencies_boost.h" />
+    <ClInclude Include="..\src\uc_build_tasks_error.h" />
+    <ClInclude Include="..\src\uc_build_tasks_fx_spawner.h" />
+    <ClInclude Include="..\src\uc_build_tasks_include_parser.h" />
+    <ClInclude Include="..\src\uc_build_tasks_string_helpers.h" />
+    <ClInclude Include="..\src\uc_build_tasks_string_helpers_managed.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\assembly_info.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\pch.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\md5.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_animation_tool_task.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_custom_tool_task.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_model_tool_task.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_skeleton_tool_task.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_texture_tool_task.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_md5.cpp">
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_build_caches.cpp">
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_dependencies.cpp">
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_fx_spawner.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_include_parser.cpp">
+      <CompileAsManaged>false</CompileAsManaged>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="../readme.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.compute.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.domain.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.geometry.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.hull.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.pixel.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.vertex.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.compute.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.domain.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.geometry.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.hull.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.pixel.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.vertex.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_root_signatures_myshader_type.h.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_root_signatures_myshader_type.cpp.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.compute.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.domain.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.geometry.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.hull.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.pixel.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.vertex.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.compute.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.domain.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.geometry.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.hull.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.pixel.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.vertex.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_root_signatures_myshader_type.h.txt" />
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_root_signatures_myshader_type.cpp.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="../resources/app.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="../resources/app.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\packages\boost.1.68.0.0\build\boost.targets" Condition="Exists('..\..\packages\boost.1.68.0.0\build\boost.targets')" />
+    <Import Project="..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets" Condition="Exists('..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets')" />
+    <Import Project="..\..\packages\boost_wave-vc141.1.68.0.0\build\boost_wave-vc141.targets" Condition="Exists('..\..\packages\boost_wave-vc141.1.68.0.0\build\boost_wave-vc141.targets')" />
+    <Import Project="..\..\packages\boost_serialization-vc141.1.68.0.0\build\boost_serialization-vc141.targets" Condition="Exists('..\..\packages\boost_serialization-vc141.1.68.0.0\build\boost_serialization-vc141.targets')" />
+    <Import Project="..\..\packages\boost_filesystem-vc141.1.68.0.0\build\boost_filesystem-vc141.targets" Condition="Exists('..\..\packages\boost_filesystem-vc141.1.68.0.0\build\boost_filesystem-vc141.targets')" />
+    <Import Project="..\..\packages\boost_system-vc141.1.68.0.0\build\boost_system-vc141.targets" Condition="Exists('..\..\packages\boost_system-vc141.1.68.0.0\build\boost_system-vc141.targets')" />
+    <Import Project="..\..\packages\boost_thread-vc141.1.68.0.0\build\boost_thread-vc141.targets" Condition="Exists('..\..\packages\boost_thread-vc141.1.68.0.0\build\boost_thread-vc141.targets')" />
+    <Import Project="..\..\packages\boost_date_time-vc141.1.68.0.0\build\boost_date_time-vc141.targets" Condition="Exists('..\..\packages\boost_date_time-vc141.1.68.0.0\build\boost_date_time-vc141.targets')" />
+    <Import Project="..\..\packages\boost_chrono-vc141.1.68.0.0\build\boost_chrono-vc141.targets" Condition="Exists('..\..\packages\boost_chrono-vc141.1.68.0.0\build\boost_chrono-vc141.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\boost.1.68.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost.1.68.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_wave-vc141.1.68.0.0\build\boost_wave-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_wave-vc141.1.68.0.0\build\boost_wave-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_serialization-vc141.1.68.0.0\build\boost_serialization-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_serialization-vc141.1.68.0.0\build\boost_serialization-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_filesystem-vc141.1.68.0.0\build\boost_filesystem-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_filesystem-vc141.1.68.0.0\build\boost_filesystem-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_system-vc141.1.68.0.0\build\boost_system-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_system-vc141.1.68.0.0\build\boost_system-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_thread-vc141.1.68.0.0\build\boost_thread-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_thread-vc141.1.68.0.0\build\boost_thread-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_date_time-vc141.1.68.0.0\build\boost_date_time-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_date_time-vc141.1.68.0.0\build\boost_date_time-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_chrono-vc141.1.68.0.0\build\boost_chrono-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_chrono-vc141.1.68.0.0\build\boost_chrono-vc141.targets'))" />
+  </Target>
+</Project>

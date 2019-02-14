@@ -1,0 +1,61 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="DebugOutputDirs">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(OutputBinDirectory)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutputTmpDirectory)\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="ReleaseOutputDirs">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(OutputBinDirectory)\$(Platform)\$(Configuration)\</OutDir>
+    <IntDir>$(OutputTmpDirectory)\$(Platform)\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_r</TargetName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="DebugOutputDirs">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>$(OutputBinDirectory)\x86\$(Configuration)\</OutDir>
+    <IntDir>$(OutputTmpDirectory)\x86\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="ReleaseOutputDirs">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>$(OutputBinDirectory)\x86\$(Configuration)\</OutDir>
+    <IntDir>$(OutputTmpDirectory)\x86\$(ProjectName)\$(Configuration)\</IntDir>
+    <TargetName>$(ProjectName)_r</TargetName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+
+</Project>
+
+  

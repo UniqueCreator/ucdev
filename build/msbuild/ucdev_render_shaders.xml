@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--Copyright, Microsoft Corporation, All rights reserved.-->
+<ProjectSchemaDefinitions xmlns="http://schemas.microsoft.com/build/2009/properties" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib">
+
+    <ContentType
+        Name="HLSL"
+        DisplayName="UCDev Shader Compiler"
+        ItemType="Shader">
+    </ContentType>
+
+    <ItemType Name="Shader" DisplayName="UCDev Shader Compiler" />
+    <!--FileExtension Name=".hlsl" ContentType="Asax"/-->
+
+  <Rule Name="HLSLCompiler"
+        PageTemplate="tool"
+        DisplayName="UCDev HLSL Compiler"
+        SwitchPrefix="/"
+        Order="300">
+
+    <StringListProperty Subtype="folder"
+                        Name="AdditionalIncludeDirectories"
+                        DisplayName="Additional Include Directories"
+                        Description="Specifies one or more directories to add to the include path; separate with semi-colons if more than one. (/I[path])"
+                        Category="General">
+    </StringListProperty>
+
+
+    <EnumProperty Name="ShaderPipelineStage"
+                  DisplayName="Shader Pipeline Stage"
+                  Description="Specifies the type of shader.  (/T [type]_[model])"
+                  Category="General">
+
+      <EnumValue Name="Pixel" DisplayName="Pixel Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+      <EnumValue Name="Vertex" DisplayName="Vertex Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+      <EnumValue Name="Geometry" DisplayName="Geometry Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+      <EnumValue Name="Domain" DisplayName="Domain Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+      <EnumValue Name="Hull" DisplayName="Hull Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+      <EnumValue Name="Compute" DisplayName="Compute Shader">
+        <Argument Property="ShaderPipelineStage" IsRequired="true"/>
+      </EnumValue>
+
+    </EnumProperty>
+
+
+
+    <Rule.Categories>
+      <Category Name="General" DisplayName="General" />
+    </Rule.Categories>
+
+    <Rule.DataSource>
+      <DataSource Persistence="ProjectFile" ItemType="Shader"/>
+    </Rule.DataSource>
+
+  
+  </Rule>
+
+</ProjectSchemaDefinitions>

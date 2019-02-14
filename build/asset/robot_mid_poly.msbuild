@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+  <ItemGroup>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\arm_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\body_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\gun_shaft_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\gun_small_parts_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\head_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\leg_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\shoulder_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\torso_basecolor.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+        <robot_mid_poly-textures Include="..\data\meshes_animated\robot\mid_poly\lights_emissive.png">
+            <format>bc1_unorm_srgb</format>
+        </robot_mid_poly-textures>
+
+    <Model Include="..\data\meshes_animated\robot\mid_poly\robot_mid_poly.fbx">
+      <ModelType>multi_textured</ModelType>
+      <Name>robot_mid_poly</Name>
+      <OptionFlipUVs>true</OptionFlipUVs>
+      <OptionTriangulate>true</OptionTriangulate>
+    </Model>
+  </ItemGroup>
+
+
+</Project>

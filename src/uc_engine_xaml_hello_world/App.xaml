@@ -1,0 +1,8 @@
+﻿<Application
+    x:Class="uc_engine_xaml_hello_world.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:uc_engine_xaml_hello_world"
+    RequestedTheme="Light">
+
+</Application>

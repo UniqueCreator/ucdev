@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{4c69f958-8958-461d-9144-785958412d5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{bb19612d-d952-4f7a-8e8b-661f3d24cb3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\lip">
+      <UniqueIdentifier>{94180054-37a4-40e4-86ea-3035b46648e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gx">
+      <UniqueIdentifier>{52390e31-5018-4cd2-a9c5-e118ea3dd678}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\gx\geo">
+      <UniqueIdentifier>{af28ecb5-f2e2-4ea9-86e3-1cd69eee646c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include\math">
+      <UniqueIdentifier>{5ccff0bb-f53d-4808-bbf3-6394eb63834b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\pch.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\lip\introspector_intrinsics.cpp">
+      <Filter>include\lip</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\model.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\structs.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\math.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\animation.cpp">
+      <Filter>include</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_animation_main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\src\pch.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\targetver.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\geo.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\model.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\structs.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\lip.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\base_class_info.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\base_class_info_base.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\context.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector_manager.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector_version.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\member_info.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\member_info_base.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\pointers.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\pointers_reloc_array.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\rtti_macros.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\tools_time_writer.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_factory.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_id.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_info.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_traits.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writer.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writer_memory.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writers.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writers_pointers.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\math.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\animation.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_geometry.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_helpers.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_assimp.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_lip.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_noff.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_multi_material_mesh.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_multi_material_mesh_assimp.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_import.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_skinned_mesh.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_skinned_mesh_assimp.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\base.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_animation_exception.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_animation_command_line.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_animation_options.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_animation_lip.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_animation_assimp.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_assimp_details.h">
+      <Filter>include\gx\geo</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_animation_animation.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\math.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\functions.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\geometry.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\graphics.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\half.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\matrix.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\quaternion.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\vector.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\defines.h">
+      <Filter>include\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\tools_time_utils.h">
+      <Filter>include\lip</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\item_pointers.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(AssImpDirectory)\bin\x64\assimp-vc140-mt-d.dll" />
+    <None Include="$(AssImpDirectory)\bin\x64\assimp-vc140-mt.dll" />
+    <None Include="$(AssImpDirectory)\bin\x86\assimp-vc140-mt-d.dll" />
+    <None Include="$(AssImpDirectory)\bin\x86\assimp-vc140-mt.dll" />
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

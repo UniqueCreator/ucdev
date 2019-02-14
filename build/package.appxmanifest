@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="2c4f1777-f6ff-4cc0-8484-dfcb5a32bd62" Publisher="CN=ucdev" Version="1.0.6.0" />
+  <mp:PhoneIdentity PhoneProductId="2c4f1777-f6ff-4cc0-8484-dfcb5a32bd62" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>ucdev_app</DisplayName>
+    <PublisherDisplayName>ucdev</PublisherDisplayName>
+    <Logo>assets\storelogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.16299.0" MaxVersionTested="10.0.16299.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ucdev.App">
+      <uap:VisualElements DisplayName="ucdev" Square150x150Logo="assets\square150x150logo.png" Square44x44Logo="assets\square44x44logo.png" Description="ucdev" BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="assets\wide310x150Logo.png">
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="assets\splashscreen.png" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

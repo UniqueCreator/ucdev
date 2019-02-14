@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\tool_tasks">
+      <UniqueIdentifier>{df20be03-edef-4bab-8281-bdf23011b476}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="../resources/resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_md5.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_include_parser.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_build_caches.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_dependencies.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_dependencies_boost.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_fx_spawner.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_string_helpers.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_string_helpers_managed.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_tasks_error.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_custom_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="../src/uc_build_tasks.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_model_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_skeleton_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_boolean_option.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_base_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_animation_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+    <ClInclude Include="../src/pch.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="../src/md5.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\uc_build_backends.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\tool_tasks\uc_build_texture_tool_task.h">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="../src/uc_build_tasks.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="../src/assembly_info.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\md5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_md5.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_include_parser.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_build_caches.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_dependencies.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_build_tasks_fx_spawner.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_custom_tool_task.cpp">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_model_tool_task.cpp">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_skeleton_tool_task.cpp">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_animation_tool_task.cpp">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClCompile>
+    <ClCompile Include="../src/pch.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\tool_tasks\uc_build_texture_tool_task.cpp">
+      <Filter>Source Files\tool_tasks</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="../readme.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="../resources/app.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="../resources/app.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.compute.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.domain.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.geometry.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.hull.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.pixel.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.cpp.vertex.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.compute.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.domain.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.geometry.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.hull.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.pixel.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_shaders_myshader_type.h.vertex.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_root_signatures_myshader_type.cpp.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\dx12_gpu_root_signatures_myshader_type.h.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.compute.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.domain.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.geometry.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.hull.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.pixel.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.cpp.vertex.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.compute.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.domain.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.geometry.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.hull.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.pixel.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_myshader_type.h.vertex.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_root_signatures_myshader_type.cpp.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+    <_EmbedManagedResourceFile Include="..\resources\unique_creator_graphics_root_signatures_myshader_type.h.txt">
+      <Filter>Resource Files</Filter>
+    </_EmbedManagedResourceFile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="$(FbxSdkX64LibDirectory)\debug\libfbxsdk.dll" />
+    <None Include="$(FbxSdkX64LibDirectory)\release\libfbxsdk.dll" />
+    <None Include="$(FbxSdkX86LibDirectory)\debug\libfbxsdk.dll" />
+    <None Include="$(FbxSdkX86LibDirectory)\release\libfbxsdk.dll" />
+    <None Include="packages.config" />
+  </ItemGroup>
+</Project>

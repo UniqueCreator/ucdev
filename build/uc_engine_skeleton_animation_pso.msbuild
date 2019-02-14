@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+
+<ItemGroup>	
+<GraphicsPipelineStateObject Include = "..\src\uc_engine_skeleton_animation\shaders\textured_skinned_graphics.pso"><Backend>UniqueCreatorPublic</Backend><EntryPointName>textured_skinned_graphics</EntryPointName></GraphicsPipelineStateObject>
+</ItemGroup></Project> 

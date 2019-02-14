@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="uc_engine_hello_world_triangle_TemporaryKey.pfx" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{000D75DD-F4CC-453E-BDFE-677C4750D732}</ProjectGuid>
+    <Keyword>uc_engine_test</Keyword>
+    <RootNamespace>uc_engine_test</RootNamespace>
+    <AppContainerApplication>true</AppContainerApplication>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <TargetRuntime>Native</TargetRuntime>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="uc_engine_example.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <PackageCertificateThumbprint>D17CF0B9573C556C847A5D71CD1DDE500CE0205E</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>uc_engine_hello_world_triangle_TemporaryKey.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package_uc_engine_hello_world_triangle.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ucdev_app_key.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\lockscreenlogo.scale-200.png" />
+    <Image Include="assets\splashscreen.scale-200.png" />
+    <Image Include="assets\square150x150logo.scale-200.png" />
+    <Image Include="assets\square44x44logo.scale-200.png" />
+    <Image Include="assets\square44x44logo.targetsize-24_altform-unplated.png" />
+    <Image Include="assets\storelogo.png" />
+    <Image Include="assets\wide310x150logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="uc_engine.vcxproj">
+      <Project>{47005cc8-bd5c-4719-9176-fafb4feff137}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../data/images/image_0.png">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), 'appdata/images/image_0.png'))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="../data/images/image_1.jpg">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), 'appdata/images/image_1.jpg'))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="msbuild/ucdev_render.targets" />
+  <Import Project="uc_engine_hello_world_triangle_hlsl.msbuild" />
+  <Import Project="uc_engine_hello_world_triangle_pso.msbuild" />
+  <Import Project="uc_engine_hello_world_triangle_h.msbuild" />
+  <Import Project="uc_engine_hello_world_triangle_cpp.msbuild" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

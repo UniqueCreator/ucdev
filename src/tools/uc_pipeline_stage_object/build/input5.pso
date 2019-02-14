@@ -1,0 +1,37 @@
+StreamOutDescription p =
+{
+	.SODeclaration =
+	{	
+		SODeclarationEntry = 
+		{
+			.Stream = 0
+			.SemanticName = "position"
+			.SemanticIndex = 0
+			.StartComponent = 0
+			.ComponentCount = 1
+			.OutputSlot = 0
+		}
+	},
+
+	.BufferStrides =
+	{
+		0 0 0
+	},
+
+	.RasterizedStream = 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

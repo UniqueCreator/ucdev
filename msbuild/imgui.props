@@ -1,0 +1,29 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ImGuiDirectory>$(MSBuildThisFileDirectory)..\3rdparty\imgui</ImGuiDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);IMGUI_INCLUDE_IMCONFIG_H</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(ImGuiDirectory);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+
+  <ItemGroup>
+    <ClInclude Include="$(ImGuiDirectory)\imgui.h" />
+    <ClInclude Include="$(ImGuiDirectory)\imgui_internal.h" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ClCompile Include="$(ImGuiDirectory)\imgui.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+
+    <ClCompile Include="$(ImGuiDirectory)\imgui_draw.cpp">
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <ObjectFileName>$(IntDir)</ObjectFileName>
+    </ClCompile>
+  </ItemGroup>
+
+</Project>

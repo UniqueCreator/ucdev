@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+
+<ItemGroup>
+    <None Include="../data/ui/fonts/Delicious-Roman.otf">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/fonts/Delicious-Roman.otf))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/fonts/Delicious-Italic.otf">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/fonts/Delicious-Italic.otf))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/fonts/Delicious-Bold.otf">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/fonts/Delicious-Bold.otf))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/fonts/Delicious-BoldItalic.otf">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/fonts/Delicious-BoldItalic.otf))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/demo.rml">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/demo.rml))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    
+    <None Include="../data/ui/invader.png">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/invader.png))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/rkt.rcss">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/rkt.rcss))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/invader.rcss">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/invader.rcss))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+
+    <None Include="../data/ui/window.rml">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), appdata/ui/window.rml))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,50 @@
+DepthStencilDescription opaque =
+{
+ 	.DepthEnable 	= true
+	.DepthWriteMask = All
+	.DepthFunction 	= Less
+	.StencilEnable 	= false
+
+	.StencilReadMask = 255
+	.StencilWriteMask = 255
+
+	.FrontFace = 
+	{
+		.StencilFailOp = Zero
+		.StencilDepthFailOp = Zero
+		.StencilPassOp = Zero
+		.StencilFunction = Less
+	},
+
+	.BackFace =
+	{
+		.StencilFailOp = Zero
+		.StencilDepthFailOp = Zero
+		.StencilPassOp = Zero
+		.StencilFunction = Less
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,25 @@
+#pragma once
+
+#include <uc_public/graphics/graphics_pipeline_state.h>
+#include <memory>
+
+namespace UniqueCreator
+{
+    namespace Graphics
+    {
+        class ResourceCreateContext;
+        namespace PipelineStates
+        {
+            namespace mypso
+            {
+               class GraphicsPipelineState : public UniqueCreator::Graphics::GraphicsPipelineState
+               {
+
+               };
+
+               std::unique_ptr<GraphicsPipelineState> Create(ResourceCreateContext* rc);
+            }
+        }
+    }
+}
+

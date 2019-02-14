@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?> 
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"> 
+
+<ItemGroup>	
+<ClCompile Include = "..\src\uc_engine_gi_room\pch.cpp"><PrecompiledHeader>Create</PrecompiledHeader></ClCompile>
+</ItemGroup>
+<ItemGroup>	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_animation.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_bone.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_file_stream.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_mesh.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_model.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\amd_transform.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\gi_room.cpp" />	
+<ClCompile Include = "..\src\uc_engine_gi_room\main.cpp" />
+</ItemGroup></Project> 

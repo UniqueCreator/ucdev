@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.props" Condition="Exists('..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.props')" />
+  <Import Project="..\..\packages\lzham-win64.1.0.0\build\lzham-win64.props" Condition="Exists('..\..\packages\lzham-win64.1.0.0\build\lzham-win64.props')" />
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\animation.cpp" />
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\math.cpp" />
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\model.cpp" />
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\gx\lip\structs.cpp" />
+    <ClCompile Include="..\..\..\..\src\uc_dev\private\lip\introspector_intrinsics.cpp" />
+    <ClCompile Include="..\src\pch.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='release|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\src\uc_animation_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_animation_assimp.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_assimp_details.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_geometry.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_helpers.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_assimp.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_import.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_lip.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_indexed_mesh_noff.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_multi_material_mesh.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_multi_material_mesh_assimp.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_skinned_mesh.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\geo\geo_skinned_mesh_assimp.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\animation.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\base.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\geo.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\math.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\model.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\gx\lip\structs.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\lip.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\base_class_info.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\base_class_info_base.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\context.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector_manager.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\introspector_version.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\item_pointers.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\member_info.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\member_info_base.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\pointers.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\pointers_reloc_array.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\rtti_macros.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\tools_time_utils.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\tools_time_writer.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_factory.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_id.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_info.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\type_traits.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writer.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writers.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writers_pointers.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\lip\writer_memory.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\math.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\defines.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\functions.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\geometry.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\graphics.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\half.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\matrix.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\quaternion.h" />
+    <ClInclude Include="..\..\..\..\include\uc_dev\math\vector.h" />
+    <ClInclude Include="..\src\pch.h" />
+    <ClInclude Include="..\src\targetver.h" />
+    <ClInclude Include="..\src\uc_animation_animation.h" />
+    <ClInclude Include="..\src\uc_animation_command_line.h" />
+    <ClInclude Include="..\src\uc_animation_exception.h" />
+    <ClInclude Include="..\src\uc_animation_lip.h" />
+    <ClInclude Include="..\src\uc_animation_options.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0D57ADB9-51A6-4322-BDE8-A33ADD8C6F12}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>ucdev_include_parser</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputBinDirectory Condition="'$(OutputBinDirectory)'==''">$(ProjectDir)..\..\bin</OutputBinDirectory>
+    <OutputLibDirectory Condition="'$(OutputLibDirectory)'==''">$(ProjectDir)..\..\lib</OutputLibDirectory>
+    <OutputTmpDirectory Condition="'$(OutputTempDirectory)'==''">$(ProjectDir)..\..\tmp</OutputTmpDirectory>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="../../../../msbuild/vs_default.props" />
+  <Import Project="../../../../msbuild/cpp_default.props" />
+  <Import Project="../../../../msbuild/gsl.props" />
+  <Import Project="../../../../msbuild/assimp.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_CONSOLE;UC_TOOLS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../src;../resources;../../../../include;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);_CONSOLE;UC_TOOLS</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>../src;../resources;../../../../include;../../include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\..\packages\boost.1.68.0.0\build\boost.targets" Condition="Exists('..\..\packages\boost.1.68.0.0\build\boost.targets')" />
+    <Import Project="..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets" Condition="Exists('..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets')" />
+    <Import Project="..\..\packages\lzham-win64.1.0.0\build\lzham-win64.targets" Condition="Exists('..\..\packages\lzham-win64.1.0.0\build\lzham-win64.targets')" />
+    <Import Project="..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.targets" Condition="Exists('..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\..\packages\boost.1.68.0.0\build\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost.1.68.0.0\build\boost.targets'))" />
+    <Error Condition="!Exists('..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\boost_program_options-vc141.1.68.0.0\build\boost_program_options-vc141.targets'))" />
+    <Error Condition="!Exists('..\..\packages\lzham-win64.1.0.0\build\lzham-win64.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\lzham-win64.1.0.0\build\lzham-win64.props'))" />
+    <Error Condition="!Exists('..\..\packages\lzham-win64.1.0.0\build\lzham-win64.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\lzham-win64.1.0.0\build\lzham-win64.targets'))" />
+    <Error Condition="!Exists('..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.props')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.props'))" />
+    <Error Condition="!Exists('..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\packages\fbxsdk-2018-1-1-dll.2018.1.1\build\fbxsdk-2018-1-1-dll.targets'))" />
+  </Target>
+</Project>

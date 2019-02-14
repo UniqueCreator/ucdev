@@ -1,0 +1,70 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <FbxSdkImpDirectory>$(MSBuildThisFileDirectory)..\3rdparty\fbxsdk\2018.1.1</FbxSdkImpDirectory>
+    <FbxSdkX86LibDirectory>$(FbxSdkImpDirectory)\lib\vs2015\x86\</FbxSdkX86LibDirectory>
+    <FbxSdkX64LibDirectory>$(FbxSdkImpDirectory)\lib\vs2015\x64\</FbxSdkX64LibDirectory>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <PreprocessorDefinitions>%(PreprocessorDefinitions);FBXSDK_SHARED</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(FbxSdkImpDirectory)\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+ 
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(FbxSdkX86LibDirectory)\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|Win32'">
+    <Link>
+      <AdditionalLibraryDirectories>$(FbxSdkX86LibDirectory)\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(FbxSdkX64LibDirectory)\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'">
+    <Link>
+      <AdditionalLibraryDirectories>$(FbxSdkX64LibDirectory)\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>libfbxsdk.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+
+<ItemGroup>
+
+    <None Include="$(FbxSdkX64LibDirectory)\debug\libfbxsdk.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),libfbxsdk.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(FbxSdkX64LibDirectory)\release\libfbxsdk.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),libfbxsdk.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(FbxSdkX86LibDirectory)\debug\libfbxsdk.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),libfbxsdk.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='debug|Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(FbxSdkX86LibDirectory)\release\libfbxsdk.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),libfbxsdk.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Configuration)|$(Platform)'=='release|Win32'">true</DeploymentContent>
+    </None>
+
+  </ItemGroup>
+
+</Project>

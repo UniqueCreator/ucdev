@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="debug|x64">
+      <Configuration>debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="release|x64">
+      <Configuration>release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DA00A99D-D70F-4DD9-9FA2-75FBEE9E87F2}</ProjectGuid>
+    <Keyword>uc_engine_test</Keyword>
+    <RootNamespace>uc_engine_test</RootNamespace>
+    <AppContainerApplication>true</AppContainerApplication>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformMinVersion>10.0.16299.0</WindowsTargetPlatformMinVersion>
+    <ApplicationType>Windows Store</ApplicationType>
+    <ApplicationTypeRevision>10.0</ApplicationTypeRevision>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <TargetRuntime>Native</TargetRuntime>
+    <DefaultLanguage>en-US</DefaultLanguage>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <Import Project="uc_engine_example.props" />
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros">
+    <PackageCertificateThumbprint>206635E46C0429629039508BA74A1F3A4A769887</PackageCertificateThumbprint>
+    <PackageCertificateKeyFile>ucdev_app_key.pfx</PackageCertificateKeyFile>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <AppxManifest Include="package_uc_engine_textured_quad.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="ucdev_app_key.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\lockscreenlogo.scale-200.png" />
+    <Image Include="assets\splashscreen.scale-200.png" />
+    <Image Include="assets\square150x150logo.scale-200.png" />
+    <Image Include="assets\square44x44logo.scale-200.png" />
+    <Image Include="assets\square44x44logo.targetsize-24_altform-unplated.png" />
+    <Image Include="assets\storelogo.png" />
+    <Image Include="assets\wide310x150logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="uc_engine.vcxproj">
+      <Project>{47005cc8-bd5c-4719-9176-fafb4feff137}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="../data/images/image_0.png">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), 'appdata/images/image_0.png'))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="../data/images/image_1.jpg">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir), 'appdata/images/image_1.jpg'))</Link>
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <Texture Include="../data/images/bear.jpg">
+      <OutputTextureFormat>bc1_unorm</OutputTextureFormat>
+    </Texture>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <Import Project="msbuild/ucdev_render.targets" />
+  <Import Project="msbuild/ucdev_render_texture.targets" />
+  <Import Project="uc_engine_textured_quad_hlsl.msbuild" />
+  <Import Project="uc_engine_textured_quad_pso.msbuild" />
+  <Import Project="uc_engine_textured_quad_h.msbuild" />
+  <Import Project="uc_engine_textured_quad_cpp.msbuild" />
+  <ImportGroup Label="ExtensionTargets" />
+</Project>

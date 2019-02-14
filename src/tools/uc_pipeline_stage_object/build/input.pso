@@ -1,0 +1,167 @@
+import a
+import b
+
+StreamOutDescription p =
+{
+	.SODeclaration =
+	{	
+		SODeclarationEntry = 
+		{
+			.Stream = 0
+			.SemanticName = "position"
+			.SemanticIndex = 0
+			.StartComponent = 0
+			.ComponentCount = 1
+			.OutputSlot = 0
+		}
+	}
+
+	.BufferStrides =
+	{
+		0 0 0
+	}
+
+	.RasterizedStream = 0
+}
+
+DepthStencilDescription opaque =
+{
+ 	.DepthEnable 			= true
+	.DepthWriteMask 		= All
+	.DepthFunction 			= Less
+	.StencilEnable 			= false
+
+	.StencilReadMask 		= 255
+	.StencilWriteMask 		= 255
+
+	.FrontFace = 
+	{
+		.StencilFailOp 		= Zero
+		.StencilDepthFailOp = Zero
+		.StencilPassOp 		= Zero
+		.StencilFunction 	= Less
+	}
+
+	.BackFace =
+	{
+		.StencilFailOp 		= Zero
+		.StencilDepthFailOp = Zero
+		.StencilPassOp 		= Zero
+		.StencilFunction 	= Less
+	}
+}
+
+RasterizerDescription too = 
+{
+	.FillMode 				= Solid
+	.CullMode 				= Back
+	.FrontCounterClockwise 	= true
+	.DepthBias 				= 0
+	.DepthBiasClamp 		= 0.0
+	.SlopeScaledDepthBias 	= 0.0
+	.DepthClipEnable 		= true
+	.MultisampleEnable 		= false
+	.AntialiasedLineEnable 	= false
+	.ForcedSampleCount  	= 0
+	.ConservativeRasterizationMode = Off
+}
+
+BlendDescription opaque = 
+{
+	.AlphaToCoverageEnable 	= true
+	.IndependentBlendEnable = true
+
+	RenderTargetBlendDesc = 
+	{
+		.BlendEnable 		= false
+		.LogicOpEnable 		= false
+		.SrcBlend 			= One
+		.DestBlend 			= One
+		.BlendOp 			= Max
+		.SrcBlendAlpha 		= One
+		.DestBlendAlpha 	= One
+		.BlendOpAlpha 		= Min
+		.LogicOp 			= Or
+		.RenderTargetWriteMask = All | Green
+	}
+}
+
+
+InputLayout shaded_geometry = 
+{
+	InputLayoutElement = 
+	{
+		.SemanticName 		= "position"
+		.SemanticIndex 		= 0
+		.Format 			= R16G16B16A16_FLOAT
+		.InputSlot 			= 0
+		.AlignedByteOffset 	= 0
+		.Classification 	= PER_VERTEX_DATA
+	}
+
+	InputLayoutElement = 
+	{
+		.SemanticName 		= "texcoord"
+		.SemanticIndex 		= 0
+		.Format 			= R16G16_FLOAT
+		.InputSlot 			= 1
+		.AlignedByteOffset 	= 0
+		.Classification 	= PER_VERTEX_DATA
+	}
+
+	InputLayoutElement = 
+	{
+		.SemanticName 		= "normal"
+		.SemanticIndex 		= 0
+		.Format 			= R16G16_FLOAT
+		.InputSlot 			= 2
+		.AlignedByteOffset 	= 0
+		.Classification 	= PER_VERTEX_DATA
+	}
+}
+
+PipelineStateObject static_geometry =
+{
+	.BlendState	   	   		= opaque
+	.SampleMask		   		= FFFFFF
+	.RasterizerState   		= too
+	.DepthStencilState 		= opaque
+	.StripCutValue     		= Disabled
+	.PrimitiveTopology 		= Triangle
+	.RTVFormats		   		= { R8G8B8A8_UNORM }
+	.DSVFormat		   		= D32_FLOAT
+	.SampleDescription		= { .Count = 1 .Quality = 0 }
+}
+
+PipelineStateObject static_geometry1 : static_geometry =
+{
+	.RootSignature 	   		= default_signature
+	.VertexShader			= shader
+	.PixelShader			= shader1
+	.InputLayout 			= shaded_geometry
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

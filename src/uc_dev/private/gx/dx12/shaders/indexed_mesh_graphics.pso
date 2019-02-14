@@ -1,0 +1,24 @@
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject indexed_mesh_graphics : solid_geometry =
+{
+    .VertexShader           = indexed_mesh_vertex
+    .PixelShader            = indexed_mesh_pixel
+    .InputLayout            = position
+}
+
+
+

@@ -1,0 +1,25 @@
+import staticgeometry
+
+InputLayout position = 
+{
+    InputLayoutElement = 
+    {
+        .SemanticName = "position"
+        .SemanticIndex = 0
+        .Format = R32G32B32_FLOAT
+        .InputSlot = 0
+        .AlignedByteOffset = 0
+        .Classification = PER_VERTEX_DATA
+    }
+}
+
+PipelineStateObject skeleton_graphics : solid_geometry =
+{
+    .VertexShader           = skeleton_vertex
+    .PixelShader            = skeleton_pixel
+    .InputLayout            = position
+    .PrimitiveTopology      = Line
+}
+
+
+

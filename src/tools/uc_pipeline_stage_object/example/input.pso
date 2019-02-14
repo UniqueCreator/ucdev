@@ -1,0 +1,74 @@
+import layouts;
+import rasterizers;
+
+PipelineStateObject static_geometry =
+{
+	.RootSignature 	   = myrs
+	.VertexShader  	   = fullscreen
+	.PixelShader   	   = texture_quad
+	.BlendState	   = opaque
+	.DepthStencilState = static_geometry
+	.InputLayout	   = inputs
+	.RasterizerState   = none
+}
+
+PipelineStateObject static_geometry_back : static_geometry  =
+{
+	.RasterizerState   = back
+}
+
+PipelineStateObject static_geometry_front : static_geometry =
+{
+	.RasterizerState   = front
+}
+
+
+PipelineStateObject skinned_geometry : static_geometry =
+{
+	.VertexShader  	   = skinned
+	.PixelShader   	   = gbuffer
+	.InputLayout	   = skinned_geometry
+}
+
+PipelineStateObject skinned_geometry_back : skinned_geometry =
+{
+	.RasterizerState   = back
+}
+
+PipelineStateObject skinned_geometry_front : skinned_geometry =
+{
+	.RasterizerState   = front
+}
+
+PipelineStateObject particles : static_geometry =
+{
+	.VertexShader  	   = particles
+	.PixelShader   	   = particles
+	.InputLayout	   = particles
+	.BlendState	   = transparent
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,58 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <DxcDirectory>$(MSBuildThisFileDirectory)..\3rdparty\dxc</DxcDirectory>
+  </PropertyGroup>
+
+<ItemGroup>
+
+    <None Include="$(DxcDirectory)\x64\dxil.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),dxil.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x64\dxcompiler.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),dxcompiler.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x64\d3dcompiler_47.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),d3dcompiler_47.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x64\d3dcsx_47.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),d3dcsx_47.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='x64'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x86\dxil.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),dxil.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x86\dxcompiler.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),dxcompiler.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x86\d3dcompiler_47.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),d3dcompiler_47.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='Win32'">true</DeploymentContent>
+    </None>
+
+    <None Include="$(DxcDirectory)\x86\d3dcsx_47.dll">
+      <Link>$([MSBuild]::MakeRelative($(TargetDir),d3dcsx_47.dll))</Link>
+      <DeploymentContent>false</DeploymentContent>
+      <DeploymentContent Condition="'$(Platform)'=='Win32'">true</DeploymentContent>
+    </None>
+
+  </ItemGroup>
+
+</Project>
